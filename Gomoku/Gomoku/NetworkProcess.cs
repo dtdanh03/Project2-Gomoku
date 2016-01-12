@@ -22,7 +22,8 @@ namespace Gomoku
 
         public void Init()
         {
-            string url = Properties.Settings.Default.ServerUrl;
+
+            string url = System.Configuration.ConfigurationManager.ConnectionStrings["serverAddress"].ToString();
             socket = IO.Socket(url);
             socket.On(Socket.EVENT_CONNECT, () =>
             {

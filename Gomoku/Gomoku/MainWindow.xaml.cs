@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace Gomoku
@@ -43,7 +44,7 @@ namespace Gomoku
 
         void networkProcess_performMove(object sender, int player, int row, int col)
         {
-            Button b = (Button)boardGrid.Children.Cast<UIElement>().First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
+            Button b = (Button)boardGrid.Children.Cast<UIElement>().Last(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
             UIPlayAt(row, col, b, player);
             if (currentGameMode == (int)GameMode.AIOnline)
             {
@@ -147,13 +148,13 @@ namespace Gomoku
             {
                 case GameBoard.X_WIN:
                     if (currentGameMode == (int)GameMode.TwoPlayers)
-                        MessageBox.Show("Congratulations!\n    X won !!!");
+                        MessageBox.Show("Congratulations!\n    White won !!!");
                     else if (currentGameMode == (int)GameMode.OnePlayer)
                         MessageBox.Show("Congratulations\n     You won !!!");
                     break;
                 case GameBoard.O_WIN:
                     if (currentGameMode == (int)GameMode.TwoPlayers)
-                        MessageBox.Show("Congratulations!\n    O won !!!");
+                        MessageBox.Show("Congratulations!\n    Black won !!!");
                     else if (currentGameMode == (int)GameMode.OnePlayer)
                         MessageBox.Show("Computer won !!!");
                     break;
@@ -165,7 +166,7 @@ namespace Gomoku
 
         void myGame_AIMoved(object sender, int x, int y)
         {
-            Button b = (Button)boardGrid.Children.Cast<UIElement>().First(e => Grid.GetRow(e) == x && Grid.GetColumn(e) == y);
+            Button b = (Button)boardGrid.Children.Cast<UIElement>().Last(e => Grid.GetRow(e) == x && Grid.GetColumn(e) == y);
 
             if (currentGameMode == (int)GameMode.OnePlayer)
             {
@@ -179,6 +180,8 @@ namespace Gomoku
         }
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
+            if (networkProcess != null)
+                networkProcess.TurnOffOnline();
             createNewGame();
         }
         private void CreateUIGameBoard()
@@ -189,13 +192,32 @@ namespace Gomoku
             {
                 for (int j = 0; j < boardSize; ++j)
                 {
+                    Rectangle rect = new Rectangle();
+                    if ((i + j) % 2 == 0)
+                    {
+                        rect.Fill = Brushes.Aqua;
+                    } 
+                    else
+                    {
+                        //rect.Fill = Brushes.CadetBlue;
+                        //rect.Fill = Brushes.Brown;
+                        rect.Fill = Brushes.Gray;
+                    }
+                    rect.Opacity = 0.4;
+                    Grid.SetRow(rect, i);
+                    Grid.SetColumn(rect, j);
+                    boardGrid.Children.Add(rect);
                     Button myButton = new Button();
                     myButton.VerticalAlignment = VerticalAlignment.Stretch;
                     myButton.HorizontalAlignment = HorizontalAlignment.Stretch;
+                    myButton.Background = Brushes.Transparent;
+                    myButton.Focusable = false;
                     Grid.SetRow(myButton, i);
                     Grid.SetColumn(myButton, j);
                     boardGrid.Children.Add(myButton);
                     myButton.Click += someButton_Click;
+                    myButton.Focusable = false;
+                   
                 }
             }
         }
@@ -246,16 +268,40 @@ namespace Gomoku
 
         private void XPlay (Button clickedButton)
         {
-            clickedButton.Content = "X";
-            clickedButton.Foreground = new SolidColorBrush(xColor);
-            clickedButton.FontSize = fontSize;
+            //clickedButton.Content = "X";
+            //clickedButton.Foreground = new SolidColorBrush(xColor);
+            //clickedButton.FontSize = fontSize;
+            ImageBrush br = new ImageBrush();
+
+            br.ImageSource = GetBitmapSource(Properties.Resources.White);
+
+            clickedButton.Background = br;
+           
+           
+        }
+
+        public BitmapSource GetBitmapSource(System.Drawing.Bitmap bitmap)
+        {
+            BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap
+            (
+                bitmap.GetHbitmap(),
+                IntPtr.Zero,
+                Int32Rect.Empty,
+                BitmapSizeOptions.FromEmptyOptions()
+            );
+
+            return bitmapSource;
         }
 
         private void OPlay (Button clickedButton)
         {
-            clickedButton.Content = "O";
-            clickedButton.Foreground = new SolidColorBrush(oColor);
-            clickedButton.FontSize = fontSize;
+            //clickedButton.Content = "O";
+            //clickedButton.Foreground = new SolidColorBrush(oColor);
+            //clickedButton.FontSize = fontSize;
+            ImageBrush br = new ImageBrush();
+            br.ImageSource = GetBitmapSource(Properties.Resources.Black);
+
+            clickedButton.Background = br;
         }
         #endregion
 
