@@ -68,6 +68,7 @@
     <Compile Include="ChatBlock.xaml.cs">
       <DependentUpon>ChatBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameBoard.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -17,8 +17,8 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="32*"/>
-            <ColumnDefinition Width="213*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="211*"/>
             <ColumnDefinition Width="22*"/>
             <ColumnDefinition Width="Auto" MinWidth="300"/>
         </Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
         <TextBox x:Name="messageTextbox" Grid.Column="3" HorizontalAlignment="Left" Height="28" Margin="36,0,0,47" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="220" FontSize="16" ForceCursor="True" KeyDown="messageTextbox_KeyDown" Grid.Row="1"/>
         <Button x:Name="messageSendButton" Content="Send" Grid.Column="3" HorizontalAlignment="Left" Margin="106,0,0,17" VerticalAlignment="Bottom" Width="91" FontSize="14" Click="messageSendButton_Click" Height="25" Grid.Row="1"/>
         <Label Content="Your message:" Grid.Column="3" HorizontalAlignment="Left" Margin="36,0,0,72" VerticalAlignment="Bottom" FontSize="16" Height="31" Width="112" Grid.Row="1"/>
-        <Grid x:Name="boardGrid" HorizontalAlignment="Stretch" Margin="10,23,0,17" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1">
+        <Grid x:Name="boardGrid" HorizontalAlignment="Stretch" Margin="37,23,39,17" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*"/>
                 <RowDefinition Height="40*"/>
@@ -63,151 +63,14 @@
                 <ColumnDefinition Width="40*"/>
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="0" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="1" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="2" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="3" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="4" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="5" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="6" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="7" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="8" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="9" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="10" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="0" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="1" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="2" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="3" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="4" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="5" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="6" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="7" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="8" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="9" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="10" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
-            <Button Grid.Row="11" Grid.Column="11" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="-0.093,0.455" Click="someButton_Click"/>
+
         </Grid>
-        <Label Content="Gomoku - Five in a row" Grid.Column="1" HorizontalAlignment="Center" Margin="60,10,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <Label Content="Gomoku - Five in a row" Grid.Column="1" HorizontalAlignment="Center" Margin="186,10,129,0" VerticalAlignment="Top" FontSize="30" Height="50" Width="318"/>
+        <Button x:Name="newGameButton" Content="New Game" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Top" Width="92" Margin="10,35,0,0" Click="newGameButton_Click" Height="22"/>
+        <ComboBox x:Name="gameModeComboBox" HorizontalAlignment="Stretch" Margin="10,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="92" SelectedIndex="1" Height="22" SelectionChanged="gameModeComboBox_SelectionChanged">
+            <Label Content="One Player"/>
+            <Label Content="Two Players"/>
+        </ComboBox>
+        <Label Content="Game Mode:" HorizontalAlignment="Stretch" Margin="10,69,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="78"/>
     </Grid>
 </Window>
