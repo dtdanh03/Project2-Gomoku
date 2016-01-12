@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 
 
-
- 
-
 namespace Gomoku
 {
     public class GameBoard
@@ -22,6 +19,7 @@ namespace Gomoku
         public const int TIE = 5;
         const int MULTIPLAYER_MODE = 6;
         const int AI_MODE = 7;
+        const int ONLINE_MODE = 8;
         int BOARDSIZE = Properties.Settings.Default.BoardSize;
 
         int currentPlayer;
@@ -85,16 +83,19 @@ namespace Gomoku
                 rv = currentPlayer;
                 SwitchPlayer();
             }
-                    
+            if (gameMode == AI_MODE && currentPlayer == O_PLAYER)
+            {
+                object[] param = new object[] {x, y};
+                bw.RunWorkerAsync(param);
+                SwitchPlayer();
+                rv = currentPlayer;
+            }
+            return rv;
+        }
 
-                if (gameMode == AI_MODE && currentPlayer == O_PLAYER)
-                {
-                    object[] param = new object[] {x, y};
-                    bw.RunWorkerAsync(param);
-                    SwitchPlayer();
-                    rv = currentPlayer;
-                }
-                return rv;
+        public void PlayAtOnline(int x, int y, int player)
+        {
+            board[x, y] = player+1;
         }
 
         private void SwitchPlayer()
@@ -324,6 +325,70 @@ namespace Gomoku
                                 moveCount++;
                                 Application.Current.Dispatcher.Invoke(new Action(() => { this.AIMoved(this, a, b);}));
                                 performCheck(a, b);
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        public void getRandomMove(int x, int y)
+        {
+            Random random = new Random();
+            int a, b;
+            int flag1, flag2;
+            int count = 0;
+            while (true)
+            {
+                count++;
+                a = b = flag1 = flag2 = 0;
+                a = random.Next(2);
+                b = random.Next(2);
+                flag1 = random.Next(2);
+                flag2 = random.Next(2);
+                if (flag1 == 1)
+                    a = x + a;
+                else
+                    a = x - a;
+                if (flag2 == 1)
+                    b = y + b;
+                else
+                    b = y - b;
+
+                if (a >= 0 && b >= 0 && a < BOARDSIZE && b < BOARDSIZE
+                    && board[a, b] == NO_VALUE)
+                {
+                    board[a, b] = X_PLAYER;
+                    Application.Current.Dispatcher.Invoke(new Action(() => { this.AIMoved(this, a, b); }));
+                    break;
+                }
+
+
+                if (count >= 20)
+                {
+                    a = random.Next(11);
+                    b = random.Next(11);
+                    if (a >= 0 && b >= 0 && a < BOARDSIZE && b < BOARDSIZE
+                   && board[a, b] == NO_VALUE)
+                    {
+                        board[a, b] = X_PLAYER;
+                        Application.Current.Dispatcher.Invoke(new Action(() => { this.AIMoved(this, a, b); }));
+                        break;
+                    }
+                }
+
+                if (count > 200)
+                {
+                    for (int i = 0; i < BOARDSIZE; ++i)
+                    {
+                        for (int j = 0; j < BOARDSIZE; ++j)
+                        {
+                            if (board[i, j] == NO_VALUE)
+                            {
+                                board[a, b] = X_PLAYER;
+                                Application.Current.Dispatcher.Invoke(new Action(() => { this.AIMoved(this, a, b); }));
                                 return;
                             }
                         }

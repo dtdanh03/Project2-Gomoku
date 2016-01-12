@@ -31,5 +31,14 @@ namespace Gomoku.Properties {
                 return ((int)(this["BoardSize"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ws://gomoku-lajosveres.rhcloud.com:8000")]
+        public string ServerUrl {
+            get {
+                return ((string)(this["ServerUrl"]));
+            }
+        }
     }
 }

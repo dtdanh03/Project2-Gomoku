@@ -25,7 +25,9 @@ namespace Gomoku
         Color xColor;
         Color oColor;
         int fontSize;
-        enum GameMode { OnePlayer, TwoPlayers };
+        bool autoFlag = true;
+        NetworkProcess networkProcess;
+        enum GameMode { OnePlayer, TwoPlayers, OnePlayerOnline, AIOnline};
         int currentGameMode;
         public MainWindow()
         {
@@ -33,24 +35,71 @@ namespace Gomoku
             xColor = Colors.Red;
             oColor = Colors.Blue;
             fontSize = 28;
-            //Button b = (Button)boardGrid.Children.Cast<UIElement>().First(e => Grid.GetRow(e) == 0 && Grid.GetColumn(e) == 0);
+            nameTextbox.Text = "Player1";
+            myName = "Player1";
             createNewGame();
+          
+        }
+
+        void networkProcess_performMove(object sender, int player, int row, int col)
+        {
+            Button b = (Button)boardGrid.Children.Cast<UIElement>().First(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
+            UIPlayAt(row, col, b, player);
+            if (currentGameMode == (int)GameMode.AIOnline)
+            {
+                if (autoFlag)
+                {
+                    myGame.getRandomMove(row, col);
+                }
+                autoFlag = !autoFlag;
+                
+            }
+        }
+
+        void networkProcess_messageComing(object sender, string message, string name)
+        {
+            newChat(message, name);
+        }
+
+        void networkProcess_firstAIMove(object sender)
+        {
+            myGame.getRandomMove(5, 5);
+            autoFlag = false;
         }
 
         #region Chat
         private void messageSendButton_Click(object sender, RoutedEventArgs e)
         {
-            ChatBlock newChatBlock = new ChatBlock();
-            newChatBlock.nameLabel.Content = myName;
-            newChatBlock.textLabel.Content = messageTextbox.Text;
-            newChatBlock.timeLabel.Content = DateTime.Now.ToShortTimeString();
-            chatPanel.Children.Add(newChatBlock);
+           
+            if (currentGameMode == (int)GameMode.OnePlayerOnline
+                || currentGameMode == (int)GameMode.AIOnline)
+            {
+                networkProcess.ChatToServer(messageTextbox.Text);
+            }
+            else
+            {
+                newChat(messageTextbox.Text, myName);
+            }
             messageTextbox.Text = "";
+        }
+
+        private void newChat(string message, string name)
+        {
+            ChatBlock newChatBlock = new ChatBlock();
+            newChatBlock.nameLabel.Content = name;
+            newChatBlock.textLabel.Content = message;
+            newChatBlock.timeLabel.Content = DateTime.Now.ToShortTimeString();
+            chatPanel.Items.Add(newChatBlock);
         }
 
         private void nameChangeButton_Click(object sender, RoutedEventArgs e)
         {
             myName = nameTextbox.Text;
+            if (currentGameMode == (int)GameMode.OnePlayerOnline
+                || currentGameMode == (int)GameMode.AIOnline)
+            {
+                networkProcess.setNameToServer(myName);
+            }
         }
 
         private void messageTextbox_KeyDown(object sender, KeyEventArgs e)
@@ -80,8 +129,18 @@ namespace Gomoku
             CreateUIGameBoard();
             currentGameMode = gameModeComboBox.SelectedIndex;
             myGame.setGameMode(currentGameMode);
-        }
+            autoFlag = true;
 
+            if (currentGameMode == (int)GameMode.OnePlayerOnline
+                || currentGameMode == (int)GameMode.AIOnline)
+            {
+                networkProcess = new NetworkProcess();
+                networkProcess.messageComing += networkProcess_messageComing;
+                networkProcess.performMove += networkProcess_performMove;
+                networkProcess.firstAIMove += networkProcess_firstAIMove;
+                networkProcess.Init();
+            } 
+        }
         void myGame_GameDidFinish(object sender, int result)
         {
             switch (result)
@@ -107,7 +166,16 @@ namespace Gomoku
         void myGame_AIMoved(object sender, int x, int y)
         {
             Button b = (Button)boardGrid.Children.Cast<UIElement>().First(e => Grid.GetRow(e) == x && Grid.GetColumn(e) == y);
-            OPlay(b);
+
+            if (currentGameMode == (int)GameMode.OnePlayer)
+            {
+                OPlay(b);
+            }
+            else if (currentGameMode == (int)GameMode.AIOnline)
+            {
+                networkProcess.PlayAt(x, y);
+            }
+         
         }
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
@@ -136,30 +204,43 @@ namespace Gomoku
             Button clickedButton = sender as Button;
             int row = Grid.GetRow(clickedButton);
             int col = Grid.GetColumn(clickedButton);
-            //string message = string.Format("Clicked at:\n  + Row: {0}\n  + Column: {1}", row.ToString(), col.ToString());
-           //MessageBox.Show(message);
-            UIPlayAt(row, col, clickedButton);
-            //if (currentGameMode == (int)GameMode.OnePlayer)
-            //{
-            //    myGame.performAIMove();
-            //}
-
+            
+            if (currentGameMode == (int)GameMode.OnePlayer
+                || currentGameMode == (int)GameMode.TwoPlayers)
+            {
+                UIPlayAt(row, col, clickedButton, 0);
+            }
+            else if (currentGameMode == (int)GameMode.OnePlayerOnline)
+            {
+                networkProcess.PlayAt(row, col);
+            }
         }
 
-        private void UIPlayAt(int x, int y, Button clickedButton)
+        private void UIPlayAt(int x, int y, Button clickedButton, int player)
         {
-            int result = myGame.PlayAt(x, y);
+            int result = 0;
+            if (currentGameMode == (int)GameMode.OnePlayer
+                || currentGameMode == (int)GameMode.TwoPlayers)
+            {
+                result = myGame.PlayAt(x, y);
+            }
+            else if (currentGameMode == (int)GameMode.OnePlayerOnline
+                || currentGameMode == (int)GameMode.AIOnline)
+            {
+                result = player + 1;
+                myGame.PlayAtOnline(x, y, player);
+            }
+           
             switch (result)
             {
-                case GameBoard.NO_VALUE:
+                case GameBoard.NO_VALUE: 
                     break;
                 case GameBoard.X_PLAYER:
                     XPlay(clickedButton);
                     break;
                 case GameBoard.O_PLAYER:
                     OPlay(clickedButton);
-                    break;
-                
+                    break; 
             }
         }
 
@@ -180,9 +261,12 @@ namespace Gomoku
 
         private void gameModeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (networkProcess != null)
+                networkProcess.TurnOffOnline();
             createNewGame();
         }
 
+     
        
     }
 }

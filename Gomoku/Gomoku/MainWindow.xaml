@@ -27,9 +27,6 @@
         <Label Content="Your name" Grid.Column="3" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" FontSize="16" Height="31" Width="87"/>
         <TextBox x:Name="nameTextbox" Grid.Column="3" HorizontalAlignment="Left" Height="28" Margin="105,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" FontSize="16" KeyDown="nameTextbox_KeyDown"/>
         <Button x:Name="nameChangeButton" Content="Change" Grid.Column="3" HorizontalAlignment="Left" Margin="229,17,0,0" VerticalAlignment="Top" Width="66" FontSize="14" Click="nameChangeButton_Click" Height="25"/>
-        <ScrollViewer Margin="36,33,21,103" Grid.Column="3" VerticalScrollBarVisibility="Visible" Background="White" Grid.Row="1">
-            <StackPanel x:Name="chatPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White"/>
-        </ScrollViewer>
         <Label Content="Chat / History" Grid.Column="3" HorizontalAlignment="Left" Margin="36,4,0,0" VerticalAlignment="Top" Background="#FF9DD7FF" Width="243" FontSize="14" Height="29" Grid.Row="1"/>
         <TextBox x:Name="messageTextbox" Grid.Column="3" HorizontalAlignment="Left" Height="28" Margin="36,0,0,47" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="220" FontSize="16" ForceCursor="True" KeyDown="messageTextbox_KeyDown" Grid.Row="1"/>
         <Button x:Name="messageSendButton" Content="Send" Grid.Column="3" HorizontalAlignment="Left" Margin="106,0,0,17" VerticalAlignment="Bottom" Width="91" FontSize="14" Click="messageSendButton_Click" Height="25" Grid.Row="1"/>
@@ -70,7 +67,10 @@
         <ComboBox x:Name="gameModeComboBox" HorizontalAlignment="Stretch" Margin="10,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="92" SelectedIndex="1" Height="22" SelectionChanged="gameModeComboBox_SelectionChanged">
             <Label Content="One Player"/>
             <Label Content="Two Players"/>
+            <Label Content="Play Online"/>
+            <Label Content="AI Online"/>
         </ComboBox>
         <Label Content="Game Mode:" HorizontalAlignment="Stretch" Margin="10,69,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="78"/>
+        <ListBox Name="chatPanel" Grid.Column="3" HorizontalAlignment="Left" Height="Auto" Margin="36,43,0,103" Grid.Row="1" VerticalAlignment="Stretch" Width="243"/>
     </Grid>
 </Window>
