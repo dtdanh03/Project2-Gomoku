@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.demo_wifip2p.MainActivity" >
+    
+    <Button 
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search" />
+    
+    <ListView
+        android:id="@+id/lvDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSearch"
+        android:layout_marginTop="10dp" />
+    
+    <TextView
+        android:id="@+id/tvConnectInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvDevice"
+        android:layout_marginTop="10dp"
+        />
+    
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvConnectInfo"
+        android:text="Connect"
+        android:visibility="gone" />
+    
+    <Button 
+        android:id="@+id/btnSendImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnConnect"
+        android:layout_toRightOf="@+id/btnConnect"
+        android:text="Send Image"
+        android:visibility="gone" />
+    
+    <ImageView 
+        android:id="@+id/imvReceiveFile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btnConnect"
+        android:layout_marginTop="10dp" />
+
+    <ToggleButton
+        android:id="@+id/tgbtnAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnSearch"
+        android:layout_alignRight="@+id/imvReceiveFile"
+        android:text="ToggleButton" />
+    
+</RelativeLayout>
