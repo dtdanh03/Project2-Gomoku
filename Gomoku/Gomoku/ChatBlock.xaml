@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Gomoku.ChatBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="43.154" Width="Auto">
+    <Grid>
+        <Label x:Name="nameLabel" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" FontWeight="Bold"/>
+        <Label x:Name="textLabel" Content="Label" VerticalAlignment="Top" Margin="0,19,4,0" FontSize="11" Width="Auto"/>
+        <Label x:Name="timeLabel" Content="Label" HorizontalAlignment="Left" Margin="170,1,0,0" VerticalAlignment="Top" Width="55" FontSize="11"/>
+        <Label Content="...................................................................................." HorizontalAlignment="Stretch" Margin="-2,25,0,-8" VerticalAlignment="Top" Width="Auto"/>
+    </Grid>
+</UserControl>
